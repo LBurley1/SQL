@@ -1,0 +1,25 @@
+--Create a Clothing Store Database
+
+CREATE TABLE customers (sku INTEGER PRIMARY KEY, product_name TEXT, size TEXT, color TEXT, price INTEGER);
+INSERT INTO customers VALUES (001, "hat", "small", "blue", 10);
+INSERT INTO customers VALUES (002, "hat", "small", "red", 10);
+INSERT INTO customers VALUES (003, "hat", "medium", "blue", 15);
+INSERT INTO customers VALUES (004, "hat", "medium", "red", 15);
+INSERT INTO customers VALUES (005, "hat", "large", "blue",20);
+INSERT INTO customers VALUES (006, "hat", "large", "red", 20);
+INSERT INTO customers VALUES (007, "shirt", "x_small", "white", 10);
+INSERT INTO customers VALUES (008, "shirt", "small", "white", 12);
+INSERT INTO customers VALUES (009, "shirt", "medium", "white", 14);
+INSERT INTO customers VALUES (010, "shirt", "large", "white", 16);
+INSERT INTO customers VALUES (011, "shirt", "x_large", "white", 18);
+INSERT INTO customers VALUES (012, "shirt", "x_small", "black", 10);
+INSERT INTO customers VALUES (013, "shirt", "small", "black", 12);
+INSERT INTO customers VALUES (014, "shirt", "medium", "black", 14);
+INSERT INTO customers VALUES (015, "shirt", "large", "black", 16);
+
+--Display the Database Ordered by Price
+SELECT * FROM customers ORDER BY price ASC;
+
+--How many items purchased >= 14 dollars?
+SELECT COUNT(*) AS customers
+    FROM customers WHERE price >= 14;

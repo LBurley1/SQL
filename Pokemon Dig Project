@@ -836,7 +836,7 @@ END AS Winners
 FROM Pokemon;
 
 /*What interesting ways are there to filter the data (using AND/OR)?*/
-SELECT Speed, Legendary FROM pokemon WHERE speed >= 80 and legendary = "true";
+SELECT * FROM pokemon WHERE generation > 5 OR Legendary = "true";
 
 
 

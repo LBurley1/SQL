@@ -1,0 +1,23 @@
+/*In this project, I made my own tables with some small set of “Reality TV Stars”, then INNER JOINED those to create nice human readable queries*/
+
+CREATE TABLE reality (id INTEGER PRIMARY KEY, name TEXT, medical_specialty TEXT, reality_show TEXT);
+
+INSERT INTO reality VALUES( 1,"Jacqueline_Walters", "OBGYN","Married_To_Medicine");
+INSERT INTO reality VALUES( 2,"Hevenly_Kimes", "Dentist","Married_To_Medicine");
+INSERT INTO reality VALUES( 3,"Contessa_Metcalfe", "Anesthesia","Married_To_Medicine");
+
+CREATE TABLE family (name TEXT PRIMARY KEY, married TEXT, children TEXT);
+
+INSERT INTO family VALUES( "Jacqueline_Walters", "Yes", "No");
+INSERT INTO family VALUES( "Hevenly_Kimes", "Yes", "Yes");
+INSERT INTO family VALUES( "Contessa_Metcalfe", "Yes", "Yes");
+
+CREATE TABLE business (id INTEGER PRIMARY KEY, business_venture TEXT);
+
+INSERT INTO business VALUES( 1, "The_Queen_V_Book");
+INSERT INTO business VALUES( 2, "DrHeavenly.com");
+INSERT INTO business VALUES( 3, "Haute’_Doc_Nutraceuticals");
+
+SELECT reality.name, reality.medical_specialty, reality.reality_show, business.business_venture FROM reality JOIN business on reality.id=business.id;
+
+SELECT reality.name, reality.medical_specialty, family.married, family.children FROM reality LEFT OUTER JOIN family on reality.name=family.name;
